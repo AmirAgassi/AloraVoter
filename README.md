@@ -1,50 +1,34 @@
-# AloraVoter: Automated Voting System
+# AloraVoter: Automated Voting Bot for Alora
 
-AloraVoter is a sophisticated automated voting tool designed to streamline the voting process for the Alora RSPS across multiple RSPS listing websites. This Python script automates the tedious process of voting, handling captcha challenges, and verifying successful votes, providing a hands-off approach for users looking to support their favorite server.
+AloraVoter is a specialized automated voting bot designed to generate vote codes for Alora RSPS.
 
-## Features
+## Key Features
 
-- **Automated Voting on Multiple Sites**: Supports automated voting on RuneLocus, RSPSList, MoparScape, and RuneList, covering a broad spectrum of the most popular RSPS listing sites.
-- **Captcha Solving Integration**: Integrates with TwoCaptcha for solving both image captchas and reCAPTCHAs, ensuring high success rates in automated voting.
-- **Session Management**: Utilizes requests and requests_html sessions for efficient navigation and interaction with voting pages, maintaining session cookies and headers for consistent voting sessions.
-- **Dynamic UID Retrieval**: Dynamically retrieves unique identifiers (UIDs) for each voting site, ensuring the correct application of votes to the targeted RSPS.
-- **Vote Verification**: After casting votes, the script checks to confirm that each vote is registered, providing feedback on the success of voting operations.
-- **Selenium WebDriver Support**: Incorporates Selenium for more complex interactions with web pages that require JavaScript rendering, enhancing the script's compatibility with diverse voting mechanisms.
+- **Multi-Platform Support**: Seamlessly votes for Alora across multiple top-list sites, including RuneLocus, RSPS-List, MoparScape, and RuneList.
+- **Automated Captcha Solving**: Integrates with TwoCaptcha to automatically solve captchas, facilitating uninterrupted voting processes.
+- **Proxy Rotation System**: Utilizes a dynamic proxy rotation mechanism to simulate votes from rotating proxies, enhancing anonymity and minimizing the risk of bans.
+- **Error Recovery and Retry Logic**: Features robust error handling and retry strategies to address issues such as network timeouts, failed captcha solutions, and unexpected website responses.
+- **Configurable Voting Intervals**: Allows for the customization of voting intervals with randomization options to simulate genuine user activity and avoid detection.
+- **Detailed Logging and Monitoring**: Offers comprehensive logging of all voting activities, including successes, failures, and the status of each vote attempt, for easy monitoring and troubleshooting.
+- **Threaded Voting Processes**: Supports concurrent voting through multithreading, significantly speeding up the voting process while efficiently managing resources.
 
-## How it Works
+## How It Works
 
-1. **UID Retrieval**: Initially, the script fetches the unique voting links (UIDs) for the server on each site.
-2. **Captcha Handling**: Depending on the site's security measures, the script either solves captchas automatically via TwoCaptcha or simulates user interaction using Selenium.
-3. **Vote Submission**: With captchas solved and session cookies managed, votes are submitted to each site.
-4. **Vote Confirmation**: Post-vote, the script verifies if the vote was successfully registered on the RSPS listing site.
+AloraVoter automates the voting process by:
 
-## Setup Instructions
+1. **Fetching Vote Sites and UID**: Dynamically retrieves the list of vote sites and corresponding UIDs for Alora.
+2. **Handling Captchas**: Automatically solves captchas using TwoCaptcha for sites that require captcha verification.
+4. **Logging and Reporting**: Maintains detailed logs for each vote attempt and reports the overall success rate and potential issues encountered during the voting process.
 
-1. Install required Python packages including `requests`, `requests_html`, `selenium`, and `twocaptcha`.
-2. Obtain a TwoCaptcha API key for captcha solving services.
-3. Update the script with your specific user details and preferences, such as the targeted RSPS UID and your TwoCaptcha API key.
-4. Run the script either as a scheduled task or manually, depending on your voting strategy.
+## Setup and Usage
 
-## Dependencies
-
-- Python 3.x
-- `requests` and `requests_html` for HTTP requests.
-- `selenium` for web automation.
-- `twocaptcha` for captcha solving services.
-- A valid TwoCaptcha API key.
+1. Configure your TwoCaptcha API key in the script.
+2. Populate the `proxies.txt` file with your proxy list.
+3. Run AloraVoter to start the automated voting process.
+4. Monitor the voting progress through the generated logs and adjust configurations as needed for optimal performance.
 
 ## Disclaimer
 
-This tool is intended for educational purposes and should be used in accordance with the terms of service of the respective RSPS listing sites and the TwoCaptcha service. Users are responsible for any actions taken by this script under their accounts.
+AloraVoter is developed to assist in promoting servers on top-list sites within the bounds of their terms of service. Users are responsible for ensuring their use of AloraVoter complies with these terms.
 
-## Contributions
-
-Contributions to AloraVoter are welcome, whether they're for adding support for new sites, improving captcha solving success rates, or enhancing the overall robustness of the script.
-
-## License
-
-AloraVoter is open-sourced under the MIT License. See the LICENSE file for more details.
-
----
-
-AloraVoter represents a significant leap forward in automating the RSPS voting process, offering users a reliable and efficient method to support their favorite servers with minimal effort.
+Enjoy a hassle-free voting experience and boost your server's visibility with AloraVoter, your dedicated voting companion for Alora.
